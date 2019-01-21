@@ -12,6 +12,9 @@ interface CRYPTO {
   	async command xtea_encrypt(const void *pt, void *ct, uint32_t *skey);										// ok saida igual clion 				****OK
   	async command xtea_decrypt(const void *ct, void *pt, uint32_t *skey);
 
+  	async command aes_cipher(unsigned char in[][4], unsigned char out[][4], unsigned char w[][4]);
+  	async command subkey(unsigned char k [][4], unsigned char w [][4]);
+
 	async command skipjack_setup(const unsigned char *key, int keylen, int num_rounds, skipjack_key *skey);		// ok saida igual clion 				****OK
 	async command skipjack_encrypt(const unsigned char *pt, unsigned char *ct, skipjack_key *skey);
 	async command skipjack_decrypt(const unsigned char *ct, unsigned char *pt, skipjack_key *skey);
