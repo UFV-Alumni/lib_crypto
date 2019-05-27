@@ -1,0 +1,12 @@
+# Scale font and line width (dpi) by changing the size! It will always display stretched.
+set terminal svg size 800,500 enhanced fname 'arial' fsize 13 butt solid
+set output 'cdf_.svg'
+
+set key right bottom 
+# Key means label...
+set xlabel 'Power consumption (mW)' font "arial,20"
+set ylabel 'P ("Power consumption" <= x)' font "arial,20"
+#set xrange [150:500]
+
+
+plot "cdf1.txt" using 1:2 title 'IDLE' with linespoint pointinterval 16 ps 1,  "cdf2.txt" using 1:2 title 'SKIPJACK' with linespoint pointinterval 18 ps 1, "cdf3.txt" using 1:2 title 'XTEA' with linespoint pointinterval 25 ps 1, "cdf4.txt" using 1:2 title 'RC2' with linespoint pointinterval 20 ps 1,  "cdf5.txt" using 1:2 title 'XXTEA' with linespoint pointinterval 22 ps 1, "cdf6.txt" using 1:2 title 'RC4' with linespoint pointinterval 25 ps 1, "cdf7.txt" using 1:2 title 'AES' with linespoint pointinterval 25 ps 1
